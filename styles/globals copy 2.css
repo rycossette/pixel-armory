@@ -1,0 +1,78 @@
+Reset some default browser styles
+body, h1, h2, h3, p, ul, li {
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make a class for a dark background */
+.dark-bg {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Style for the navigation */
+
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #333; /* or any color you prefer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* or any height you prefer */
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  background-color: #444;
+}
+
+/* ... other styles ... */
+
+
+/* Style for the header */
+/* Updated styles for the header */
+.header-container {
+  position: relative;
+  height: 300px; /* or any height you prefer */
+  overflow: hidden;
+}
+
+.header-image {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%; /* or any max-width you prefer */
+  max-height: 150%; /* or any max-height you prefer */
+  object-fit:fill;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Limit the image size */
+.header-image img {
+  max-width: 800px; /* or any max-width you prefer */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Style for the gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
