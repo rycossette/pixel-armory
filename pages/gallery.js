@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Lightbox from 'react-18-image-lightbox';
 import 'react-18-image-lightbox/style.css';
-import Nav from '../components/nav';
+import Nav from '../components/Nav';
 import Footer from '../components/Footer'
 import Button from '../components/Button'; // Import the Button component
 import '../styles/gallery.css';

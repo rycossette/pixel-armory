@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import Nav from '../components/Nav';
 import Header from '../components/Header';
-import Resume from '../components/Resume';
 import Footer from '../components/Footer'
-import ClientList from '../components/ClientLis'
-import Line from '../components/Line';
-import Skills from '../components/Skills';
+
 
 const Contact = () => {
     return (
@@ -54,6 +51,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
       </div>
     );
   };
