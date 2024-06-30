@@ -8,11 +8,12 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between w-full bg-black px-5 py-5">
       <div className="flex items-center h-12">
-        <Image src="/images/logo/pa.png" 
-        width={100} 
-        height={100} 
-        alt="Logo" 
-        className="h-full" 
+        <Image 
+          src="/images/logo/pa.png" 
+          width={100} 
+          height={100} 
+          alt="Logo" 
+          className="h-full" 
         />
       </div>
       <div className="hidden md:flex flex-grow justify-center">
