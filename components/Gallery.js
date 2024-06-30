@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Lightbox from 'react-18-image-lightbox';
 import 'react-18-image-lightbox/style.css';
 import Button from './Button'; // Assuming Button component is in the same folder as Gallery.js
@@ -48,13 +48,13 @@ const Gallery = () => {
     setIsOpen(false);
   };
 
-  const moveNext = () => {
+  const moveNext = useCallback(() => {
     setPhotoIndex((index) => (index + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const movePrev = () => {
+  const movePrev = useCallback(() => {
     setPhotoIndex((index) => (index + images.length - 1) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -72,7 +72,7 @@ const Gallery = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, images.length]);
+  }, [isOpen, moveNext, movePrev]);
 
   return (
     <div className='bg-gradient-to-b from-slate-950 to-slate-900'>
