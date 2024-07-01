@@ -4,11 +4,11 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import HeaderBasic from '../components/HeaderBasic';
 
-export default function GalleryPage() {
+const GalleryPage = () => {
   return (
     <div>
       <Nav />
-      <div className="mt-20"> {/* Adjust mt-20 based on your navbar height */}
+      <div className="mt-20">
         <HeaderBasic
           title="Some of my work."
           subtitle="Here you can explore some of the projects I've worked on."
@@ -19,4 +19,6 @@ export default function GalleryPage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default GalleryPage;

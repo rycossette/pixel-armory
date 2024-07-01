@@ -1,22 +1,18 @@
-import Link from 'next/link';
+import React from 'react';
 import Nav from '../components/Nav';
 import HeaderBasic from '../components/HeaderBasic';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
     <div>
       <Nav />
-
-      {/* Hero Section */}
       <HeaderBasic
         title="Contact Us"
         subtitle="Get in touch with Pixel Armory. We're here to help with all your creative needs."
         backgroundImage="/images/hero/darkmode_01.jpg"
-        // backgroundColor="bg-gradient-to-b from-black to-indigo-950"
-        marginTop="20px" // Adjust margin top to compensate for navbar height
+        marginTop="20px"
       />
-
       <div className="flex w-full min-h-screen">
         <div className="flex flex-wrap w-4/5 mx-auto py-32 items-center p-3 sm:p-10 gap-10">
           <div className="flex flex-col w-full">

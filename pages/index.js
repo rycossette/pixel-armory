@@ -1,3 +1,4 @@
+import React from 'react';
 import Nav from '../components/Nav';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -7,7 +8,7 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Nav />
@@ -20,4 +21,6 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;
