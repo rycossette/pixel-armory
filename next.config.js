@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const nextConfig = {
+    webpack: (config) => {
+      config.resolve.modules.push(__dirname);
+      return config;
+    },
+  };
+  
+  module.exports = nextConfig;
+  

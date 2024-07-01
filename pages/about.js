@@ -1,9 +1,9 @@
 import React from 'react';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import HeaderBasic from '../components/HeaderBasic';
-import TeamSection from '../components/TeamSection';
-import ExpertiseSection from '../components/ExpertiseSection';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
+import HeaderBasic from '@/components/HeaderBasic';
+import TeamSection from '@/components/TeamSection';
+import ExpertiseSection from '@/components/ExpertiseSection';
 
 const About = () => {
   return (

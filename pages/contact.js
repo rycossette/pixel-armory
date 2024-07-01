@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from '../components/Nav';
-import HeaderBasic from '../components/HeaderBasic';
-import Footer from '../components/Footer';
+import Nav from '@/components/Nav';
+import HeaderBasic from '@/components/HeaderBasic';
+import Footer from '@/components/Footer';
 
 const Contact = () => {
   return (
