@@ -8,13 +8,13 @@ import Skills from '../components/Skills';
 
 const About = () => {
   return (
-    <div className="bg-indigo-950 text-white font-sans">
+    <div className="mt-20 bg-indigo-950 text-white font-sans">
       <Nav />
       <HeaderBasic
         title="About Us"
         subtitle="Pixel Armory is a creative agency specializing in motion design, 3D modeling/animation, web design, server-side development, advanced networking, AI, and more. Founded by industry veterans Ryan Cossette and Matt Kinser, Pixel Armory started as a response to client demand. Our mission is to deliver high-quality, innovative solutions to our clients&apos; creative challenges."
         backgroundImage="/images/hero/darkmode_02.jpg"
-        marginTop="20px"
+        marginTop="60px"
       />
       <TeamSection />
       <Skills />
