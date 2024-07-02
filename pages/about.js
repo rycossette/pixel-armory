@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import HeaderBasic from '../components/HeaderBasic';
 import TeamSection from '../components/TeamSection';
 import ExpertiseSection from '../components/ExpertiseSection';
+import Skills from '../components/Skills';
 
 const About = () => {
   return (
@@ -16,7 +17,8 @@ const About = () => {
         marginTop="20px"
       />
       <TeamSection />
-      <ExpertiseSection />
+      <Skills />
+      {/* <ExpertiseSection /> */}
       <Footer />
     </div>
   );

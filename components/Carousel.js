@@ -37,7 +37,7 @@ const Carousel = () => {
               <div className="text-left text-white pb-10 max-w-md">
                 <h1 className="text-4xl py-5 font-bold">{slide.title}</h1>
                 <p className="text-xl mb-6">{slide.description}</p>
-                <Link href="#contact" legacyBehavior>
+                <Link href="contact" legacyBehavior>
                   <a className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Get Started</a>
                 </Link>
               </div>

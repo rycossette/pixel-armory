@@ -11,12 +11,12 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Get in touch with Pixel Armory. We're here to help with all your creative needs."
         backgroundImage="/images/hero/darkmode_01.jpg"
-        marginTop="20px"
+        marginTop="60px"
       />
       <div className="flex w-full min-h-screen">
         <div className="flex flex-wrap w-4/5 mx-auto py-32 items-center p-3 sm:p-10 gap-10">
           <div className="flex flex-col w-full">
-            <h1 className="text-4xl text-white font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl text-white font-bold mb-10">Contact Us</h1>
             <form className="w-full text-slate-500">
               <div className="flex flex-wrap gap-4 mb-4">
                 <input
@@ -46,7 +46,7 @@ const Contact = () => {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="p-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+                  className=" rounded-md px-4 gap-4 py-2 text-lg bg-indigo-800 text-white hover:bg-indigo-600 transition"
                 >
                   Send Message
                 </button>
