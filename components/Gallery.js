@@ -77,7 +77,7 @@ const Gallery = () => {
   return (
     <div className='bg-gradient-to-b from-slate-950 to-slate-900'>
       <div className='flex w-full mx-auto justify-center mt-14 py-10'>
-        <h1 className="text-4xl text-white font-bold">Some of my work.</h1>
+        <h1 className="text-4xl text-white font-bold">Some of our work.</h1>
       </div>
   
       {/* Flex container for gallery and footer */}
