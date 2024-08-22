@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Carousel = () => {
   const slides = [
     { image: '/images/hero/explainer.jpg', title: 'Transforming Visions into Reality', description: 'Expert Motion Graphics, Animation, 3D Modeling, and Software Development' },
-    { image: '/images/hero/3d.jpg', title: 'Innovative 3D Design', description: 'Creating engaging and informative explainer videos to simplify complex concepts.' },
+    { image: '/images/hero/3d3.png', title: 'Innovative 3D Design', description: 'Creating engaging and informative explainer videos to simplify complex concepts.' },
     { image: '/images/hero/ai.jpg', title: 'AI Integration', description: 'Leveraging AI to enhance your projects and streamline processes.' },
   ];
 

@@ -10,8 +10,8 @@ const GalleryPage = () => {
       <Nav />
       <div className="mt-20">
         <HeaderBasic
-          title="Showcase"
-          subtitle="Here you can explore some of the projects we've worked on."
+          title="Featured Project Showcase"
+          // subtitle="Featured Projects."
           backgroundImage="/images/hero/darkmode_03.jpg"
         />
         <Gallery />
