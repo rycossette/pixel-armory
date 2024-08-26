@@ -7,6 +7,7 @@ import AboutUs from '../components/AboutUs';
 import FeaturedProjects from '../components/FeaturedProjects';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
+import Showcase from '../components/Showcase';
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
       <AboutUs />
       <Services />
       <FeaturedProjects />
-      {/* <Testimonials /> */}
+      {/* <Gallery /> */}
+      <Showcase />
       <CallToAction />
       <Footer />
     </div>

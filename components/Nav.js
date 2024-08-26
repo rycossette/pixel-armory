@@ -32,12 +32,12 @@ const Nav = () => {
         <Link href="/about" legacyBehavior>
           <a className={`${linkClasses('/about')} mx-4`}>About Us</a>
         </Link>
-        <Link href="/gallery" legacyBehavior>
-          <a className={`${linkClasses('/gallery')} mx-4`}>Showcase</a>
+        <Link href="/showcase" legacyBehavior>
+          <a className={`${linkClasses('/showcase')} mx-4`}>Showcase</a>
         </Link>
-        <Link href="/services" legacyBehavior>
+        {/* <Link href="/services" legacyBehavior>
           <a className={`${linkClasses('/services')} mx-4`}>Services</a>
-        </Link>
+        </Link> */}
         <Link href="/contact" legacyBehavior>
           <a className={`${linkClasses('/contact')} mx-4`}>Contact</a>
         </Link>
@@ -83,7 +83,7 @@ const Nav = () => {
           <Link href="/about" legacyBehavior>
             <a className="text-white hover:text-blue-500">About Us</a>
           </Link>
-          <Link href="/gallery" legacyBehavior>
+          <Link href="/showcase" legacyBehavior>
             <a className="text-white hover:text-blue-500">Showcase</a>
           </Link>
           <Link href="/services" legacyBehavior>
