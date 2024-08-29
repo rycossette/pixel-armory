@@ -8,17 +8,19 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import Testimonials from '../components/Testimonials';
 import CallToAction from '../components/CallToAction';
 import Showcase from '../components/Showcase';
+import DemoReel from '../components/DemoReel'
 
 const Home = () => {
   return (
     <div>
       <Nav />
       <Header />
-      <AboutUs />
+      {/* <AboutUs /> */}
+      <DemoReel />
       <Services />
-      <FeaturedProjects />
+      {/* <FeaturedProjects /> */}
       {/* <Gallery /> */}
-      <Showcase />
+      {/* <Showcase /> */}
       <CallToAction />
       <Footer />
     </div>

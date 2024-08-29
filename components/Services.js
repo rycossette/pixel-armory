@@ -30,29 +30,25 @@ const servicesData = [
 
 const Services = () => (
   <section className="services bg-gradient-to-b from-indigo-950 to-black text-white py-20">
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-2">
       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-20">Our Services</h2>
-      <div className="flex flex-col space-y-20">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4">
         {servicesData.map((service, index) => (
           <div
             key={index}
-            className={`service__item flex flex-col md:flex-row ${index % 2 === 0 ? '' : 'md:flex-row-reverse'} items-center`}
+            className="service__item flex flex-col items-center bg-indigo-900 bg-opacity-20 p-4 pb-4 rounded-2xl "
           >
-            <div
-              className={`md:w-2/5 w-full ${
-                index % 2 === 0 ? 'border-r-4 border-indigo-800' : 'border-l-4 border-indigo-800'
-              }`}
-            >
+            <div className="w-full mb-4">
               <img
                 src={service.imageUrl}
                 alt={service.title}
-                className="w-auto object-cover"
+                className="w-full h-auto object-cover rounded-2xl"
                 style={{ aspectRatio: '1 / 1' }} // Maintain the square aspect ratio
               />
             </div>
-            <div className="md:w-3/5 w-full p-8 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{service.title}</h3>
-              <p className="text-lg md:text-xl lg:text-2xl">{service.description}</p>
+            <div className="w-full text-center">
+              <h3 className="text-lg md:text-xl lg:text-xl font-bold mb-4">{service.title}</h3>
+              <p className="text-md md:text-lg lg:text-lg">{service.description}</p>
             </div>
           </div>
         ))}
