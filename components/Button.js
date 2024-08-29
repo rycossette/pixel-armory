@@ -10,7 +10,7 @@ const Button = ({ children, onClick }) => {
         border-indigo-700 
         text-indigo-300 
         hover:bg-indigo-600 
-        hover:border-indigo-400 
+        hover:border-amber-500 
         hover:text-gray-300 
         focus:bg-amber-600 
         focus:border-amber-500
