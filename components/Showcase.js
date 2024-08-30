@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Modal from 'react-modal';
 import Image from 'next/image';
-import Lightbox from 'react-18-image-lightbox';
-import 'react-18-image-lightbox/style.css';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import Button from './Button';
 
 Modal.setAppElement('#__next');  // This is necessary for accessibility reasons
@@ -102,7 +104,7 @@ const Showcase = () => {
                     height={150}
                     layout="responsive"
                     quality={75}
-                    className="object-cover w-full h-auto rounded-lg"  // Ensures the entire image, including corners, is rounded
+                    className="object-cover w-full h-auto rounded-lg"
                     loading="lazy"
                   />
                 </div>
@@ -149,7 +151,7 @@ const Showcase = () => {
                         height={450}
                         layout="responsive"
                         quality={75}
-                        className="object-cover w-full h-auto rounded-lg"  // Ensures the entire image, including corners, is rounded
+                        className="object-cover w-full h-auto rounded-lg"
                         loading="lazy"
                       />
                     </div>
@@ -165,18 +167,25 @@ const Showcase = () => {
 
       {isOpen && selectedProject && (
         <Lightbox
-          mainSrc={`/images/projects/${selectedProject.name}/${selectedProject.images[photoIndex]}`}
-          nextSrc={`/images/projects/${selectedProject.name}/${selectedProject.images[(photoIndex + 1) % selectedProject.images.length]}`}
-          prevSrc={`/images/projects/${selectedProject.name}/${selectedProject.images[(photoIndex + selectedProject.images.length - 1) % selectedProject.images.length]}`}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={movePrev}
-          onMoveNextRequest={moveNext}
-          imageStyle={{
-            maxWidth: '90vw', // Limits image to 90% of the viewport width
-            maxHeight: '90vh', // Limits image to 90% of the viewport height
-            objectFit: 'contain', // Ensures the image scales while keeping the aspect ratio within the max bounds
-            margin: 'auto', // Centers the image within the lightbox
+          open={isOpen}
+          close={() => setIsOpen(false)}
+          slides={selectedProject.images.map(image => ({
+            src: `/images/projects/${selectedProject.name}/${image}`,
+          }))}
+          plugins={[Fullscreen, Zoom]}
+          zoom={{
+            wheel: true,  // Enable mouse wheel for zooming
+            maxZoomPixelRatio: 3,  // Set the maximum zoom level
+            zoomInMultiplier: 1.5,  // Speed up the zoom-in process
           }}
+          on={{
+            click: ({ target, currentTarget }) => {
+              if (target === currentTarget) {
+                setIsOpen(false);
+              }
+            },
+          }}
+          index={photoIndex}
         />
       )}
     </div>
