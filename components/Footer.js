@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Button from './Button';  // Assuming you're using the same Button component
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -54,13 +55,13 @@ const Footer = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-2 bg-gray-800 text-white rounded"
+              className="px-4 py-2 bg-indigo-950 text-white border border-indigo-600 rounded-md"
               placeholder="Your email address"
               required
             />
-            <button type="submit" className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+            <Button type="submit" className="px-4 py-2 bg-indigo-800 text-white rounded-md hover:bg-indigo-600">
               Subscribe
-            </button>
+            </Button>
           </form>
         </div>
 

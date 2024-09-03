@@ -8,7 +8,7 @@ const ShowcasePage = () => {
   return (
     <div>
       <Nav />
-      <div className="mt-20">
+      <div className="mt-24">
         <HeaderBasic
           title="Project Showcase"
           backgroundImage="/images/hero/darkmode_03.jpg"

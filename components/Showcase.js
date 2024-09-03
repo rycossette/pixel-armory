@@ -73,7 +73,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-slate-950 to-slate-900 mt-20">
+    <div className="bg-gradient-to-b from-gray-950 to-indigo-950 mt-20">
       <div className="flex justify-center flex-wrap px-5 items-center py-5 gap-3 bg-transparent">
         {categories.map((category) => (
           <Button
@@ -87,7 +87,7 @@ const Showcase = () => {
       </div>
 
       <div className="flex justify-center flex-wrap px-5 pt-[80px] pb-5 gap-3">
-        <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 lg:max-w-5xl space-y-5">
+        <div className="columns-2 sm:columns-3 md:columns-3 lg:columns-4 xl:columns-3  lg:max-w-6xl  space-y-5">
           {filteredProjects.map((project, index) => {
             const firstImage = project.thumbnail;
             return (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
+import Button from './Button'; // Import the Button component
 
 const MergedCarousel = () => {
   const slides = [
@@ -39,7 +40,9 @@ const MergedCarousel = () => {
                 <h2 className="text-4xl font-bold mb-10">We are a Creative Design and Technical Solutions Agency.</h2>
                 <p className="text-xl mb-6">We help brands captivate audiences, streamline processes, and achieve lasting impact.</p>
                 <Link href="contact" legacyBehavior>
-                  <a className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Get Started</a>
+                  <Button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </div>

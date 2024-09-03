@@ -3,12 +3,11 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import HeaderBasic from '../components/HeaderBasic';
 import TeamSection from '../components/TeamSection';
-import ExpertiseSection from '../components/ExpertiseSection';
 import Skills from '../components/Skills';
 
 const About = () => {
   return (
-    <div className="mt-20 bg-indigo-950 text-white font-sans">
+    <div className="mt-24 bg-indigo-950 text-white font-sans">
       <Nav />
       <HeaderBasic
         title="About Us"
@@ -18,7 +17,6 @@ const About = () => {
       />
       <TeamSection />
       <Skills />
-      {/* <ExpertiseSection /> */}
       <Footer />
     </div>
   );

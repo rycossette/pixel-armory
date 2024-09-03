@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HeaderBasic = ({ title, subtitle, backgroundImage, backgroundColor, marginTop }) => {
+const HeaderBasic = ({ title, subtitle, backgroundImage, backgroundColor, marginTop = 'mt-24' }) => {
   const containerStyle = {
     marginTop: marginTop || '0px', // Default to 0px if marginTop is not provided
   };
@@ -21,12 +21,17 @@ const HeaderBasic = ({ title, subtitle, backgroundImage, backgroundColor, margin
   }
 
   return (
-    <section className="relative h-[50vh] flex items-center justify-center" style={{ ...backgroundStyle, ...containerStyle }}>
-      <div className="container mx-auto px-6 lg:px-32 text-center text-white">
-        <div className="section-title mb-8">
+    <section
+      className={`relative h-[50vh] flex items-center justify-center ${marginTop}`}
+      style={{ ...backgroundStyle, ...containerStyle }}
+    >
+      <div className="container mx-auto px-6 lg:px-32 flex flex-col md:flex-row items-center text-white">
+        <div className="md:w-1/3 text-left">
           <h2 className="text-5xl font-bold pb-5">{title}</h2>
         </div>
-        <p className="text-xl mb-8">{subtitle}</p>
+        <div className="md:w-2/3 text-left">
+          <p className="text-xl">{subtitle}</p>
+        </div>
       </div>
     </section>
   );
