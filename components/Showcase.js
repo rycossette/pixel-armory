@@ -37,8 +37,28 @@ const Showcase = () => {
 
   const filteredProjects = filterProjects();
 
-  const openProject = (project) => {
+  const openProject = async (project) => {
     setSelectedProject(project);
+    try {
+      const response = await fetch(`/images/projects/${project.name}/description.txt`);
+      
+      if (response.ok) {
+        const description = await response.text();
+        setSelectedProject(prev => ({ ...prev, description }));
+      } else {
+        // If description.txt doesn't exist, use default description
+        setSelectedProject(prev => ({
+          ...prev,
+          description: `This is the project description for ${project.name}. More details will be added soon.`
+        }));
+      }
+    } catch (error) {
+      console.error('Error fetching project description:', error);
+      setSelectedProject(prev => ({
+        ...prev,
+        description: `This is the project description for ${project.name}. More details will be added soon.`
+      }));
+    }
     setIsModalOpen(true);
   };
 
@@ -133,6 +153,15 @@ const Showcase = () => {
                 <Button onClick={handleNextProject}>Next</Button>
                 <Button onClick={closeProject}>Close</Button>
               </div>
+            </div>
+
+            {/* Project Description Section */}
+            <div className="p-6 text-white">
+              {selectedProject.description ? (
+                <p>{selectedProject.description}</p>
+              ) : (
+                <p>Loading description...</p>
+              )}
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 py-5 custom-scrollbar">
