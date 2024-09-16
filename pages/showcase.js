@@ -1,20 +1,22 @@
 import React from 'react';
-import Showcase from '../components/Showcase';
 import Nav from '../components/Nav';
+import ClientShowcase from '../components/ClientShowcase';
 import Footer from '../components/Footer';
 import HeaderBasic from '../components/HeaderBasic';
 
 const ShowcasePage = () => {
   return (
     <div>
+      {/* Header */}
       <Nav />
-      <div className="mt-24">
-        <HeaderBasic
-          title="Project Showcase"
-          backgroundImage="/images/hero/darkmode_03.jpg"
-        />
-        <Showcase />
-      </div>
+      <HeaderBasic
+        title="Project Showcase"
+        subtitle="Explore Our Diverse Work"
+        backgroundImage="/images/hero/darkmode_03.jpg"
+      />
+
+      {/* Linking to ClientShowcase Component */}
+      <ClientShowcase />
       <Footer />
     </div>
   );
