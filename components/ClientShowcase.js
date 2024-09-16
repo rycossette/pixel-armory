@@ -8,8 +8,6 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'; // Thumbnails plugin
 import exifr from 'exifr';
 import Button from './Button'; // Custom button component
 
-// MAIN GALLERY SECTION STARTS HERE
-// ============================================================
 const ClientShowcase = () => {
   const [clientData, setClientData] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -18,7 +16,7 @@ const ClientShowcase = () => {
   const [lightboxImages, setLightboxImages] = useState([]);
   const [projectDescriptions, setProjectDescriptions] = useState({});
 
-  // Fetch client data from the API
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -36,7 +34,7 @@ const ClientShowcase = () => {
     fetchData();
   }, []);
 
-  // Fetch descriptions for each project and store in the state
+
   const fetchProjectDescriptions = async (client, project) => {
     try {
       const response = await fetch(`/api/project-description?client=${encodeURIComponent(client)}&project=${encodeURIComponent(project)}`);
@@ -60,10 +58,10 @@ const ClientShowcase = () => {
     }
   };
 
-  // Collect categories based on the client names
+
   const categories = ['All', ...new Set(clientData.map(client => client.name))];
 
-  // Filter clients based on the selected category
+
   const filterClients = () => {
     if (selectedCategory === 'All') {
       return clientData;
@@ -73,8 +71,8 @@ const ClientShowcase = () => {
 
   const filteredClients = filterClients();
 
-  // OPEN LIGHTBOX FUNCTION
-  // ------------------------------------------------------------
+
+
   const openLightbox = async (client, project, index) => {
     const projectImages = await Promise.all(
       project.images.map(async (image) => {
@@ -93,8 +91,7 @@ const ClientShowcase = () => {
     setIsOpen(true);
   };
 
-  // MAIN GALLERY DISPLAY LOGIC
-  // ------------------------------------------------------------
+
   return (
     <div className="bg-gradient-to-b from-gray-950 to-indigo-950 min-h-screen py-10">
       {/* Filter Buttons */}
@@ -148,10 +145,10 @@ const ClientShowcase = () => {
       </div>
 
       {/* MAIN GALLERY SECTION ENDS HERE */}
-      // ============================================================
+
       
       {/* LIGHTBOX SECTION STARTS HERE */}
-      // ============================================================
+
       {isOpen && (
         <>
           <Lightbox
@@ -174,7 +171,7 @@ const ClientShowcase = () => {
             index={photoIndex}
             on={{ change: setPhotoIndex }}
             render={{
-              // Render title and description for each image in the lightbox
+
               slideHeader: ({ slide }) => (
                 <div className="absolute bottom-0 w-full text-center text-white bg-opacity-60 p-4 z-10 bg-black">
                   <h3 className="text-2xl font-bold mb-2">{slide.title}</h3>
@@ -186,7 +183,6 @@ const ClientShowcase = () => {
         </>
       )}
       {/* LIGHTBOX SECTION ENDS HERE */}
-      // ============================================================
     </div>
   );
 };
