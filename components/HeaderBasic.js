@@ -22,7 +22,7 @@ const HeaderBasic = ({ title, subtitle, backgroundImage, backgroundColor, margin
 
   return (
     <section
-      className={`relative h-[50vh] flex items-center justify-center ${marginTop}`}
+      className={`relative h-[400px] md:h-[500px] flex items-center justify-center ${marginTop}`} // Fixed height for all screens, larger on medium screens
       style={{ ...backgroundStyle, ...containerStyle }}
     >
       <div className="container mx-auto px-6 lg:px-32 flex flex-col md:flex-row items-center text-white">
