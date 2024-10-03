@@ -102,8 +102,9 @@ const ClientShowcase = ({ initialClientData }) => {
         {projects.map((project, projectIdx) => (
           project.images.map((image, imgIdx) => (
             <div key={`${client.name}-${projectIdx}-${imgIdx}`} className="relative w-full rounded-lg" style={{ paddingBottom: '56.25%' }}>
+              {/* Load from the 'thumbnails' folder */}
               <Image
-                src={`/images/clients/${client.name}/${project.name}/${image}`}
+                src={`/images/clients/${client.name}/${project.name}/thumbnails/${image}`} // Use thumbnail versions
                 alt={project.name}
                 fill
                 sizes="100vw"
@@ -116,6 +117,7 @@ const ClientShowcase = ({ initialClientData }) => {
       </div>
     );
   };
+  
 
   if (loading) {
     return <div className="spinner">Loading...</div>;
