@@ -108,7 +108,7 @@ const ClientShowcase = ({ initialClientData }) => {
                 fill
                 sizes="100vw"
                 className={`absolute inset-0 object-cover ${isVerticalImage(`/images/clients/${client.name}/${project.name}/${image}`) ? 'object-top' : 'object-center'} rounded-lg`}
-                priority={imgIdx < 5} // Only prioritize the first few images
+                loading="lazy"
               />
             </div>
           ))
