@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run generate-thumbnails && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-thumbnails": "node scripts/generate-thumbnails.js"
   },
   "dependencies": {
     "@egjs/infinitegrid": "^4.10.1",
