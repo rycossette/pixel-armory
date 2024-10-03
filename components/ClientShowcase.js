@@ -29,6 +29,9 @@ const ClientShowcase = ({ initialClientData }) => {
   const [imageData, setImageData] = useState({});
   const [loading, setLoading] = useState(!initialClientData);
 
+  // Clear filtered thumbnails when category is changed
+  const [filteredClients, setFilteredClients] = useState(clientData);
+
   // Fetch client data dynamically if it's not available (for CSR)
   useEffect(() => {
     if (!initialClientData) {
@@ -83,19 +86,22 @@ const ClientShowcase = ({ initialClientData }) => {
     return false;
   };
 
-  const filteredClients = useMemo(() => {
+  // Update filtered clients when category changes
+  useEffect(() => {
     if (selectedCategory === 'All') {
-      return clientData;
+      setFilteredClients(clientData);
+    } else {
+      const filtered = clientData.filter((client) => client.name === selectedCategory);
+      setFilteredClients(filtered);
     }
-    return clientData.filter((client) => client.name === selectedCategory);
   }, [selectedCategory, clientData]);
 
   const renderProjectLayout = (client, projects) => {
     return (
-      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 space-y-5 mx-auto">
-        {projects.flatMap((project, idx) =>
+      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 space-y-5">
+        {projects.map((project, projectIdx) => (
           project.images.map((image, imgIdx) => (
-            <div key={imgIdx} className="relative w-full rounded-lg" style={{ paddingBottom: '56.25%' }}>
+            <div key={`${client.name}-${projectIdx}-${imgIdx}`} className="relative w-full rounded-lg" style={{ paddingBottom: '56.25%' }}>
               <Image
                 src={`/images/clients/${client.name}/${project.name}/${image}`}
                 alt={project.name}
@@ -103,11 +109,10 @@ const ClientShowcase = ({ initialClientData }) => {
                 sizes="100vw"
                 className={`absolute inset-0 object-cover ${isVerticalImage(`/images/clients/${client.name}/${project.name}/${image}`) ? 'object-top' : 'object-center'} rounded-lg`}
                 priority={imgIdx < 5} // Only prioritize the first few images
-                loading={imgIdx < 5 ? 'eager' : 'lazy'} // Lazy load non-priority images
               />
             </div>
           ))
-        )}
+        ))}
       </div>
     );
   };
@@ -135,7 +140,7 @@ const ClientShowcase = ({ initialClientData }) => {
       <div className="container mx-auto px-0 lg:w-9/12">
         {filteredClients.length > 0 ? (
           filteredClients.map((client, clientIndex) => (
-            <Link href={`/clients/${client.name}`} prefetch={true} key={clientIndex} legacyBehavior>
+            <Link href={`/clients/${client.name}`} key={clientIndex} legacyBehavior>
               <div className="service__item flex flex-col items-center bg-indigo-950 bg-opacity-80 rounded-2xl p-4 mb-5 w-full cursor-pointer">
                 <h2 className="text-2xl font-bold text-white mb-6">{client.name}</h2>
                 <div className="w-full">
@@ -176,7 +181,6 @@ const ClientShowcase = ({ initialClientData }) => {
   );
 };
 
-// Fetch client data at build time and revalidate
 export async function getStaticProps() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/clients`);
   const initialClientData = await response.json();
@@ -185,7 +189,7 @@ export async function getStaticProps() {
     props: {
       initialClientData,
     },
-    revalidate: 60, // Revalidate the data every 60 seconds
+    revalidate: 60,
   };
 }
 
