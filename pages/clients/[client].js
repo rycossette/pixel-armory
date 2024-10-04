@@ -1,117 +1,131 @@
-import Image from 'next/image'; // Import Next.js Image component
 import fs from 'fs';
 import path from 'path';
+import { useState } from 'react';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import HeaderBasic from '../../components/HeaderBasic';
+import Image from 'next/image';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
-const ClientPage = ({ client, projects, headerImage }) => {
-  return (
-    <>
-      <Nav />
-      <HeaderBasic
-        title={client}
-        subtitle="Explore the projects we've worked on."
-        backgroundImage={headerImage ? headerImage : null} // Use the header image if available
-        backgroundColor={headerImage ? null : "rgb(31, 41, 55)"} // Fallback to color if no image
-      />
-      <div className="bg-gradient-to-b from-gray-950 to-indigo-900 text-white py-20">
-        <div className="container mx-auto px-4">
-          {projects.length > 0 ? (
-            projects.map((project, index) => (
-              <div key={index} className="mb-12">
-                <h3 className="text-3xl font-bold mb-6">{project.name}</h3>
-                <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 space-y-5">
-                  {project.images.length > 0 ? (
-                    project.images.map((image, idx) => (
-                      <div key={idx} className="overflow-hidden rounded-lg">
-                        <Image
-                          src={image.src} // Ensure URL is correct (no over-encoding)
-                          alt={`Project ${project.name} image ${idx}`}
-                          width={500} // Set appropriate width for optimization
-                          height={300} // Set appropriate height for optimization
-                          layout="responsive" // Use responsive layout for better loading performance
-                          loading="lazy" // Use lazy loading
-                          className="object-cover w-full h-auto"
-                        />
-                      </div>
-                    ))
-                  ) : (
-                    <p>No images found for this project.</p>
-                  )}
-                </div>
+const ClientPage = ({ clientData }) => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxImages, setLightboxImages] = useState([]);
+
+  if (!clientData) {
+    return <div>Client data not found</div>;
+  }
+
+  const { name, projects } = clientData;
+  const headerImage = `/images/clients/${encodeURIComponent(name)}/header.jpg`;
+
+  const handleThumbnailClick = (index, images) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const renderProjectLayout = (client, projects = []) => {
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+        {projects.flatMap((project) =>
+          (project.images || []).map((image, imgIdx) => {
+            const imagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(image)}`;
+            const fullImagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(image)}`;
+
+            return (
+              <div
+                key={imgIdx}
+                className="relative w-full rounded-lg cursor-pointer"
+                style={{ paddingBottom: '56.25%' }}
+                onClick={() => handleThumbnailClick(imgIdx, (project.images || []).map((img) => `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(img)}`))}
+              >
+                <Image
+                  src={imagePath}
+                  alt={project.name}
+                  fill
+                  sizes="100vw"
+                  className="absolute inset-0 object-cover rounded-lg"
+                  loading="lazy"
+                />
               </div>
-            ))
-          ) : (
-            <p>No projects found for this client.</p>
-          )}
-        </div>
+            );
+          })
+        )}
       </div>
+    );
+  };
+
+  return (
+    <div>
+      <Nav />
+
+      <HeaderBasic
+        title={name}
+        subtitle={`Explore ${name}'s Projects`}
+        backgroundImage={headerImage}
+      />
+
+      <div className="container mx-auto px-6 py-10">
+        {projects.length > 0 ? (
+          <div className="space-y-10">
+            {projects.map((project) => (
+              <div key={project.name}>
+                <h3 className="text-xl font-semibold mb-4">{project.name}</h3>
+                {renderProjectLayout(clientData, [project])}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500">No projects available for this client.</p>
+        )}
+      </div>
+
       <Footer />
-    </>
+
+      {/* Lightbox Component */}
+      {lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={lightboxImages.map((imgSrc) => ({ src: imgSrc }))}
+          index={lightboxIndex}
+          onIndexChange={setLightboxIndex}
+        />
+      )}
+    </div>
   );
 };
 
+// Generate static paths for all clients
 export async function getStaticPaths() {
-  const clientsPath = path.join(process.cwd(), 'public/images/clients');
-  const clientDirs = fs.readdirSync(clientsPath).filter((dir) => {
-    return fs.statSync(path.join(clientsPath, dir)).isDirectory();
-  });
+  const clientsDirectory = path.join(process.cwd(), 'public/images/clients');
+  const clientNames = fs.readdirSync(clientsDirectory);
 
-  const paths = clientDirs.map((client) => ({
-    params: { client },
+  const paths = clientNames.map((clientName) => ({
+    params: { client: clientName },
   }));
 
   return { paths, fallback: false };
 }
 
+// Fetch client data for each page
 export async function getStaticProps({ params }) {
   const { client } = params;
-  const projectsPath = path.join(process.cwd(), `public/images/clients/${client}`);
-
-  let projectDirs = [];
-  try {
-    projectDirs = fs.readdirSync(projectsPath).filter((project) => {
-      const projectPath = path.join(projectsPath, project);
-      return fs.statSync(projectPath).isDirectory(); // Ensure it's a directory
-    });
-  } catch (error) {
-    console.error(`Error reading directory for client: ${client}`, error);
-    return { props: { client, projects: [], headerImage: null } };
-  }
-
-  const projects = projectDirs.map((project) => {
-    const projectPath = path.join(projectsPath, project);
-    const imageFiles = fs.readdirSync(projectPath).filter((file) => /\.(jpg|jpeg|png|webp|gif)$/i.test(file));
-
-    const images = imageFiles.map((file) => {
-      return { src: `/images/clients/${encodeURIComponent(client)}/${encodeURIComponent(project)}/${encodeURIComponent(file)}` };
-    });
-
-    return {
-      name: project,
-      images,
-    };
+  const clientDir = path.join(process.cwd(), 'public/images/clients', client);
+  
+  const projects = fs.readdirSync(clientDir).map((projectName) => {
+    const projectDir = path.join(clientDir, projectName);
+    const images = fs.existsSync(path.join(projectDir, 'thumbnails'))
+      ? fs.readdirSync(path.join(projectDir, 'thumbnails')).filter((img) => /\.(jpg|jpeg|png|gif)$/.test(img))
+      : [];
+    return { name: projectName, images };
   });
-
-  let headerImage = null;
-  for (const project of projects) {
-    if (project.images.length > 0) {
-      headerImage = project.images[0].src;
-      console.log(`Header image found: ${headerImage} for project ${project.name}`);
-      break;
-    }
-  }
-
-  if (!headerImage) {
-    console.warn(`No header image found for client: ${client}`);
-  }
 
   return {
     props: {
-      client,
-      projects,
-      headerImage,
+      clientData: { name: client, projects },
     },
   };
 }

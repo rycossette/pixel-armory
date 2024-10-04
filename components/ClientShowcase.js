@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ClientShowcase = ({ clientData = [] }) => {
@@ -9,16 +10,9 @@ const ClientShowcase = ({ clientData = [] }) => {
       console.timeEnd("Showcase Page Load Time");
     } else {
       console.time("Showcase Page Load Time");
+      setLoading(false);
     }
   }, [loading]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!clientData || clientData.length === 0) {
-    return <div>No client data available.</div>;
-  }
 
   const renderProjectLayout = (client, projects = []) => {
     return (
@@ -26,13 +20,8 @@ const ClientShowcase = ({ clientData = [] }) => {
         {projects.flatMap((project, idx) =>
           (project.images || []).map((image, imgIdx) => {
             const imagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(image)}`;
-            console.log('Rendering image:', imagePath);
             return (
-              <div
-                key={imgIdx}
-                className="relative w-full rounded-lg"
-                style={{ paddingBottom: "56.25%" }}
-              >
+              <div key={imgIdx} className="relative w-full rounded-lg" style={{ paddingBottom: "56.25%" }}>
                 <Image
                   src={imagePath}
                   alt={project.name}
@@ -48,47 +37,25 @@ const ClientShowcase = ({ clientData = [] }) => {
       </div>
     );
   };
-  
 
   return (
-    <div className="client-showcase">
+    <div className="client-showcase px-6 py-10 text-center">
       {clientData.map((client, idx) => (
-        <div key={client.name}>
-          <h2>{client.name}</h2>
+        <div key={client.name} className="mb-10">
+          <Link href={`/clients/${client.name}`}>
+            <a className="text-2xl font-bold text-white hover:text-gray-300 mb-6 inline-block">
+              {client.name}
+            </a>
+          </Link>
           {client.projects && client.projects.length > 0 ? (
             renderProjectLayout(client, client.projects)
           ) : (
-            <p>No projects available for this client.</p>
+            <p className="text-gray-400">No projects available for this client.</p>
           )}
         </div>
       ))}
     </div>
   );
 };
-
-export async function getStaticProps() {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/clients`);
-    const clientData = await response.json();
-
-    if (!clientData) {
-      throw new Error("Client data is empty or undefined");
-    }
-
-    return {
-      props: {
-        clientData,
-      },
-      revalidate: 60, // Rebuild every 60 seconds
-    };
-  } catch (error) {
-    console.error("Error fetching client data:", error);
-    return {
-      props: {
-        clientData: [], // Return empty array to prevent undefined issues
-      },
-    };
-  }
-}
 
 export default ClientShowcase;

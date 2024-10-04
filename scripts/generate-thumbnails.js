@@ -1,61 +1,40 @@
+const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
 
-const clientsDir = path.join(process.cwd(), 'public', 'images', 'clients');
+const clientsDir = path.join(__dirname, '..', 'public', 'images', 'clients');
 
-function generateThumbnails() {
-  const clientFolders = fs.readdirSync(clientsDir);
+const generateThumbnails = () => {
+  const clients = fs.readdirSync(clientsDir).filter(client => fs.lstatSync(path.join(clientsDir, client)).isDirectory());
 
-  clientFolders.forEach((client) => {
-    const clientPath = path.join(clientsDir, client);
-    
-    // Ensure clientPath is a directory, skip files like 'header.jpg'
-    if (!fs.statSync(clientPath).isDirectory()) {
-      return;
-    }
+  clients.forEach((client) => {
+    const clientDir = path.join(clientsDir, client);
+    const projects = fs.readdirSync(clientDir).filter(project => fs.lstatSync(path.join(clientDir, project)).isDirectory());
 
-    const projectFolders = fs.readdirSync(clientPath);
+    projects.forEach((project) => {
+      const projectDir = path.join(clientDir, project);
+      const thumbnailsDir = path.join(projectDir, 'thumbnails');
 
-    projectFolders.forEach((project) => {
-      const projectPath = path.join(clientPath, project);
-
-      // Ensure projectPath is a directory, skip any files inside the client folder
-      if (!fs.statSync(projectPath).isDirectory()) {
-        return;
-      }
-
-      const imageFiles = fs.readdirSync(projectPath).filter((file) =>
-        /\.(jpg|jpeg|png)$/i.test(file)
-      );
-
-      const thumbnailsDir = path.join(projectPath, 'thumbnails');
       if (!fs.existsSync(thumbnailsDir)) {
         fs.mkdirSync(thumbnailsDir);
       }
 
-      imageFiles.forEach((image) => {
-        const imagePath = path.join(projectPath, image);
-        const thumbnailPath = path.join(thumbnailsDir, image);
+      const images = fs.readdirSync(projectDir).filter(file => /\.(jpg|jpeg|png)$/i.test(file));
 
-        // Skip if the thumbnail already exists
-        if (fs.existsSync(thumbnailPath)) {
-          return;
+      images.forEach((image) => {
+        const inputPath = path.join(projectDir, image);
+        const outputPath = path.join(thumbnailsDir, image);
+
+        if (!fs.existsSync(outputPath)) {
+          sharp(inputPath)
+            .resize({ width: 300 })
+            .toFile(outputPath)
+            .then(() => console.log(`Thumbnail created for ${inputPath}`))
+            .catch(err => console.error(err));
         }
-
-        // Create thumbnail
-        sharp(imagePath)
-          .resize(300) // Adjust the size as needed
-          .toFile(thumbnailPath)
-          .then(() => {
-            console.log(`Thumbnail created for ${imagePath}`);
-          })
-          .catch((err) => {
-            console.error(`Error creating thumbnail for ${imagePath}:`, err);
-          });
       });
     });
   });
-}
+};
 
 generateThumbnails();
