@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate-thumbnails && next build",
+    "build": "npm run generate-thumbnails && node scripts/generate-image-layout.js && next build",
     "start": "next start",
     "lint": "next lint",
     "generate-thumbnails": "node scripts/generate-thumbnails.js"

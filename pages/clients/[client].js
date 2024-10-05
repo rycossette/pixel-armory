@@ -28,7 +28,7 @@ const ClientPage = ({ clientData }) => {
 
   const renderProjectLayout = (client, projects = []) => {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 text-white">
         {projects.flatMap((project) =>
           (project.images || []).map((image, imgIdx) => {
             const imagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(image)}`;
@@ -37,8 +37,8 @@ const ClientPage = ({ clientData }) => {
             return (
               <div
                 key={imgIdx}
-                className="relative w-full rounded-lg cursor-pointer"
-                style={{ paddingBottom: '56.25%' }}
+                className="relative w-full cursor-pointer"
+                style={{ paddingBottom: '100%' }} // Square thumbnail ratio
                 onClick={() => handleThumbnailClick(imgIdx, (project.images || []).map((img) => `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(img)}`))}
               >
                 <Image
@@ -46,7 +46,7 @@ const ClientPage = ({ clientData }) => {
                   alt={project.name}
                   fill
                   sizes="100vw"
-                  className="absolute inset-0 object-cover rounded-lg"
+                  className="absolute inset-0 object-cover"
                   loading="lazy"
                 />
               </div>
@@ -72,13 +72,13 @@ const ClientPage = ({ clientData }) => {
           <div className="space-y-10">
             {projects.map((project) => (
               <div key={project.name}>
-                <h3 className="text-xl font-semibold mb-4">{project.name}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-white">{project.name}</h3>
                 {renderProjectLayout(clientData, [project])}
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-gray-500">No projects available for this client.</p>
+          <p className="text-white">No projects available for this client.</p>
         )}
       </div>
 
@@ -118,7 +118,7 @@ export async function getStaticProps({ params }) {
   const projects = fs.readdirSync(clientDir).map((projectName) => {
     const projectDir = path.join(clientDir, projectName);
     const images = fs.existsSync(path.join(projectDir, 'thumbnails'))
-      ? fs.readdirSync(path.join(projectDir, 'thumbnails')).filter((img) => /\.(jpg|jpeg|png|gif)$/.test(img))
+      ? fs.readdirSync(path.join(projectDir, 'thumbnails')).filter((img) => /\.(jpg|jpeg|png|webp)$/.test(img)) // Support PNG, JPG, WebP
       : [];
     return { name: projectName, images };
   });

@@ -3,47 +3,39 @@
 @tailwind utilities;
 @import 'flowbite/dist/flowbite.css';
 
-
 html {
-    background-color: rgb(2 6 23 );
+  background-color: rgb(2 6 23);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-    width: 20px; /* Width of the scrollbar */
+  width: 20px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-    margin-right: 10px; /* Create space on the right side of the scrollbar */
+  background: transparent;
+  margin-right: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #5a67d8; /* Tailwind's indigo-600 */
-    border-radius: 9999px; /* Fully rounded scrollbar */
-    border: 4px solid rgba(0, 0, 0, 0); /* Creates space around the thumb */
-    box-shadow: inset 0 0 0 5px transparent; /* Adds spacing inside the thumb */
+  background-color: #5a67d8;
+  border-radius: 9999px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 0 5px transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: #4c51bf; /* Tailwind's indigo-700 */
+  background-color: #4c51bf;
 }
 
 .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #5a67d8 transparent;
+  scrollbar-width: thin;
+  scrollbar-color: #5a67d8 transparent;
 }
-/* For WebKit browsers (Chrome, Safari) */
+
 .custom-scrollbar::-webkit-scrollbar-button {
-    display: none; /* This hides the up and down arrows on the scrollbar */
+  display: none;
 }
 
-/* For Firefox */
 .custom-scrollbar {
-    scrollbar-width: thin; /* Keeps the scrollbar visible with no arrows */
-    scrollbar-color: #5a67d8 transparent; /* Custom color for the scrollbar thumb */
-}
-
-/* For Internet Explorer and Edge */
-.custom-scrollbar {
-    -ms-overflow-style: auto; /* Keeps the scrollbar visible */
+  -ms-overflow-style: auto;
 }
