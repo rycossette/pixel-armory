@@ -1,139 +1,111 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Lightbox from 'react-18-image-lightbox';
-import 'react-18-image-lightbox/style.css';
-import Button from './Button'; // Assuming Button component is in the same folder as Gallery.js
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Button from "./Button"; // Import your Button component
 
-const Gallery = () => {
-  const [imageData, setImageData] = useState({});
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isOpen, setIsOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
-
-  useEffect(() => {
-    // Fetch the gallery data and ensure thumbnails are generated
-    async function fetchData() {
-      const galleryResponse = await fetch('/api/gallery');
-      const galleryData = await galleryResponse.json();
-      setImageData(galleryData);
-
-      // Trigger thumbnail generation
-      const thumbnailResponse = await fetch('/api/generate-thumbnails');
-      if (!thumbnailResponse.ok) {
-        console.error('Failed to generate thumbnails');
-      }
-    }
-    fetchData();
-  }, []);
-
-  const categories = Object.keys(imageData);
-
-  const filterImages = () => {
-    if (selectedCategory === 'All') {
-      return Object.entries(imageData).flatMap(([category, images]) =>
-        images.map(image => ({ category, image }))
-      );
-    }
-    return imageData[selectedCategory].map(image => ({ category: selectedCategory, image }));
-  };
-
-  const images = filterImages();
-
-  const openLightbox = (index) => {
-    setPhotoIndex(index);
-    setIsOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setIsOpen(false);
-  };
-
-  const moveNext = useCallback(() => {
-    setPhotoIndex((index) => (index + 1) % images.length);
-  }, [images.length]);
-
-  const movePrev = useCallback(() => {
-    setPhotoIndex((index) => (index + images.length - 1) % images.length);
-  }, [images.length]);
+const ClientShowcase = ({ clientData = [] }) => {
+  const [loading, setLoading] = useState(true);
+  const [filteredClients, setFilteredClients] = useState(clientData);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (!isOpen) return;
+    if (!loading) {
+      console.timeEnd("Showcase Page Load Time");
+    } else {
+      console.time("Showcase Page Load Time");
+    }
+  }, [loading]);
 
-      if (event.key === 'ArrowRight') {
-        moveNext();
-      } else if (event.key === 'ArrowLeft') {
-        movePrev();
-      }
-    };
+  useEffect(() => {
+    setFilteredClients(
+      activeFilter === "All"
+        ? clientData
+        : clientData.filter((client) => client.name === activeFilter)
+    );
+  }, [activeFilter, clientData]);
 
-    window.addEventListener('keydown', handleKeyDown);
+  // Extract unique categories dynamically from the clientData
+  useEffect(() => {
+    const allCategories = ["All", ...clientData.map((client) => client.name)];
+    setCategories(allCategories);
+  }, [clientData]);
 
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, moveNext, movePrev]);
+  if (!clientData || clientData.length === 0) {
+    return <div>No client data available.</div>;
+  }
+
+  const renderProjectLayout = (client, projects = []) => {
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
+        {projects.flatMap((project, idx) =>
+          (project.images || []).slice(0, 3).map((image, imgIdx) => {
+            const imagePath = `/images/clients/${encodeURIComponent(
+              client.name
+            )}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(
+              image
+            )}`;
+            return (
+              <div
+                key={imgIdx}
+                className="relative w-full"
+                style={{ paddingBottom: "100%" }}
+              >
+                <Image
+                  src={imagePath}
+                  alt={project.name}
+                  fill
+                  sizes="100vw"
+                  className="absolute inset-0 object-cover"
+                  loading="lazy"
+                />
+              </div>
+            );
+          })
+        )}
+      </div>
+    );
+  };
+
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
 
   return (
-    <div className='bg-gradient-to-b from-slate-950 to-slate-900'>
-      <div className='flex w-full mx-auto justify-center mt-14 py-5'>
-        {/* title goes below */}
-        {/* <h1 className="text-4xl text-white font-bold">Some of our work.</h1> */}
+    <div className="client-showcase container mx-auto px-6 py-10">
+      {/* Filter buttons */}
+      <div className="mb-10 flex justify-center space-x-4">
+        {categories.map((filter) => (
+          <Button key={filter} onClick={() => handleFilterClick(filter)}>
+            {filter}
+          </Button>
+        ))}
       </div>
-  
-      {/* Flex container for gallery and footer */}
-      <div className="flex flex-col min-h-screen">
-        {/* Gallery Container with minimum height */}
-        <div className="flex-grow">
-  
-          {/* Category Buttons */}
-          <div className="flex justify-center flex-wrap px-5 items-center py-5 gap-3 bg-transparent">
-            {['All', ...categories].map((category) => (
-              <Button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                isActive={selectedCategory === category}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-  
-          {/* Masonry Gallery Grid */}
-          <div className='flex justify-center flex-wrap px-5 pt-[80px] pb-5 gap-3'>
-            <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 lg:max-w-5xl space-y-5">
-              {images.map(({ category, image }, index) => (
-                <div className="overflow-hidden rounded-lg" key={index} onClick={() => openLightbox(index)}>
-                  <Image
-                    src={`/images/portfolio/${category}/${image}`}
-                    alt={`Artwork ${index}`}
-                    width={250}
-                    height={150}
-                    layout="intrinsic"
-                    quality={75}
-                    className="object-cover w-full h-auto"
-                    loading="lazy"
-                  />
+
+      <div className="space-y-10">
+        {filteredClients.map((client) => (
+          <Link href={`/clients/${encodeURIComponent(client.name)}`} key={client.name}>
+            <div className="group cursor-pointer relative mb-8">
+              <div className="relative overflow-hidden group-hover:ring-4 group-hover:ring-indigo-600 transition-shadow p-4">
+                {/* Render Projects as a grid without gaps or rounding */}
+                {renderProjectLayout(client, client.projects)}
+
+                {/* Overlay: Default state with client name */}
+                <div className="absolute inset-0 bg-black bg-opacity-30 flex items-start p-4">
+                  <h2 className="text-white text-lg font-bold">{client.name}</h2>
                 </div>
-              ))}
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <h2 className="text-white text-xl font-semibold">View More</h2>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          {/* Lightbox */}
-          {isOpen && (
-            <Lightbox
-              mainSrc={`/images/portfolio/${images[photoIndex].category}/${images[photoIndex].image}`}
-              nextSrc={`/images/portfolio/${images[(photoIndex + 1) % images.length].category}/${images[(photoIndex + 1) % images.length].image}`}
-              prevSrc={`/images/portfolio/${images[(photoIndex + images.length - 1) % images.length].category}/${images[(photoIndex + images.length - 1) % images.length].image}`}
-              onCloseRequest={closeLightbox}
-              onMovePrevRequest={movePrev}
-              onMoveNextRequest={moveNext}
-            />
-          )}
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default ClientShowcase;
