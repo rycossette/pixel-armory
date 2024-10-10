@@ -21,7 +21,7 @@ const MergedCarousel = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[80vh]">
+    <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
       {slides.map((slide, index) => (
         <Transition
           key={index}
