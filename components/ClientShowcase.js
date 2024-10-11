@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
@@ -10,62 +10,44 @@ const ClientShowcase = ({ clientData = [] }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [allImages, setAllImages] = useState([]);
-  const [filteredImages, setFilteredImages] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [categories, setCategories] = useState(["All"]);
 
   // Fetch images from the server based on client data
   useEffect(() => {
     const fetchImages = async () => {
-      const images = [];
-      for (const client of clientData) {
-        for (const project of client.projects) {
-          try {
-            const response = await fetch(`/api/project-images?client=${encodeURIComponent(client.name)}&project=${encodeURIComponent(project.name)}`);
-            const data = await response.json();
-            if (data.images && data.images.length > 0) {
-              data.images.forEach(image => {
-                images.push({
-                  src: image.src,
-                  client: client.name,
-                  project: project.name,
-                  description: data.projectDescription
-                });
-              });
-            }
-          } catch (error) {
-            console.error(`Error fetching images for ${client.name} - ${project.name}:`, error);
-          }
-        }
+      try {
+        const response = await fetch('/api/all-project-images');
+        const data = await response.json();
+        setAllImages(data.images);
+      } catch (error) {
+        console.error("Error fetching images:", error);
       }
-      setAllImages(images);
-      setFilteredImages(images);
-      const clientCategories = ["All", ...new Set(images.map(image => image.client))];
-      setCategories(clientCategories);
     };
 
     fetchImages();
-  }, [clientData]);
+  }, []);
 
-  // Update filtered images based on the active filter
-  useEffect(() => {
-    setFilteredImages(
-      activeFilter === "All"
-        ? allImages
-        : allImages.filter(image => image.client === activeFilter)
-    );
+  // Memoize categories and filtered images
+  const categories = useMemo(() => {
+    return ["All", ...new Set(allImages.map(image => image.client))];
+  }, [allImages]);
+
+  const filteredImages = useMemo(() => {
+    return activeFilter === "All"
+      ? allImages
+      : allImages.filter(image => image.client === activeFilter);
   }, [activeFilter, allImages]);
 
   // Handle thumbnail click to open the lightbox
-  const handleThumbnailClick = (index) => {
+  const handleThumbnailClick = useCallback((index) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
-  };
+  }, []);
 
   // Handle filter button click to set the active filter
-  const handleFilterClick = (filter) => {
+  const handleFilterClick = useCallback((filter) => {
     setActiveFilter(filter);
-  };
+  }, []);
 
   // Display a message if no client data is available
   if (!Array.isArray(clientData) || clientData.length === 0) {
@@ -76,11 +58,11 @@ const ClientShowcase = ({ clientData = [] }) => {
     <div className="client-showcase container mx-auto px-4 sm:px-6 py-10">
       {/* Filter buttons */}
       <div className="flex flex-wrap justify-center mb-6 gap-2">
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <Button
-            key={index}
+            key={category}
             onClick={() => handleFilterClick(category)}
-            className={`m-2 ${activeFilter === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`${activeFilter === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
           >
             {category}
           </Button>
@@ -91,7 +73,7 @@ const ClientShowcase = ({ clientData = [] }) => {
       <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
         {filteredImages.map((image, index) => (
           <div
-            key={index}
+            key={image.src}
             className="break-inside-avoid mb-4 cursor-pointer rounded-lg overflow-hidden"
             onClick={() => handleThumbnailClick(index)}
           >
