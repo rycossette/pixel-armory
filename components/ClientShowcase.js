@@ -1,105 +1,125 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
 
+// Component to showcase client projects with images
 const ClientShowcase = ({ clientData = [] }) => {
-  const [filteredClients, setFilteredClients] = useState(clientData);
+  // State variables to manage lightbox, images, filters, and categories
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [allImages, setAllImages] = useState([]);
+  const [filteredImages, setFilteredImages] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(["All"]);
 
+  // Fetch images from the server based on client data
   useEffect(() => {
-    setFilteredClients(
-      activeFilter === "All"
-        ? clientData
-        : clientData.filter((client) => client.name === activeFilter)
-    );
-  }, [activeFilter, clientData]);
+    const fetchImages = async () => {
+      const images = [];
+      for (const client of clientData) {
+        for (const project of client.projects) {
+          try {
+            const response = await fetch(`/api/project-images?client=${encodeURIComponent(client.name)}&project=${encodeURIComponent(project.name)}`);
+            const data = await response.json();
+            if (data.images && data.images.length > 0) {
+              data.images.forEach(image => {
+                images.push({
+                  src: image.src,
+                  client: client.name,
+                  project: project.name,
+                  description: data.projectDescription
+                });
+              });
+            }
+          } catch (error) {
+            console.error(`Error fetching images for ${client.name} - ${project.name}:`, error);
+          }
+        }
+      }
+      setAllImages(images);
+      setFilteredImages(images);
+      const clientCategories = ["All", ...new Set(images.map(image => image.client))];
+      setCategories(clientCategories);
+    };
 
-  useEffect(() => {
-    const allCategories = ["All", ...clientData.map((client) => client.name)];
-    setCategories(allCategories);
+    fetchImages();
   }, [clientData]);
 
-  if (!Array.isArray(clientData) || clientData.length === 0) {
-    return <div>No client data available.</div>;
-  }
-
-  const renderProjectLayout = (client, projects = []) => {
-    if (!Array.isArray(projects)) return null;
-
-    return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
-        {projects.flatMap((project, idx) =>
-          Array.isArray(project.images)
-            ? project.images.slice(0, 3).map((image, imgIdx) => {
-                const imagePath = `/images/clients/${encodeURIComponent(
-                  client.name
-                )}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(
-                  image
-                )}`;
-                return (
-                  <div
-                    key={imgIdx}
-                    className="relative w-full h-full"
-                    style={{ paddingBottom: "100%" }} // Force images to be square
-                  >
-                    <Image
-                      src={imagePath}
-                      alt={project.name}
-                      fill
-                      sizes="100vw"
-                      className="absolute inset-0 object-cover brightness-100" // Remove brightness dimming
-                      loading="lazy"
-                    />
-                  </div>
-                );
-              })
-            : []
-        )}
-      </div>
+  // Update filtered images based on the active filter
+  useEffect(() => {
+    setFilteredImages(
+      activeFilter === "All"
+        ? allImages
+        : allImages.filter(image => image.client === activeFilter)
     );
+  }, [activeFilter, allImages]);
+
+  // Handle thumbnail click to open the lightbox
+  const handleThumbnailClick = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
   };
 
+  // Handle filter button click to set the active filter
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
   };
 
+  // Display a message if no client data is available
+  if (!Array.isArray(clientData) || clientData.length === 0) {
+    return <div>No client data available.</div>;
+  }
+
   return (
-    <div className="client-showcase container mx-auto px-6 py-10">
+    <div className="client-showcase container mx-auto px-4 sm:px-6 py-10">
       {/* Filter buttons */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-        {categories.map((filter) => (
-          <Button key={filter} onClick={() => handleFilterClick(filter)}>
-            {filter}
+      <div className="flex flex-wrap justify-center mb-6 gap-2">
+        {categories.map((category, index) => (
+          <Button
+            key={index}
+            onClick={() => handleFilterClick(category)}
+            className={`m-2 ${activeFilter === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+          >
+            {category}
           </Button>
         ))}
       </div>
 
-      <div className="space-y-10">
-        {filteredClients.map((client) => (
-          <Link href={`/clients/${encodeURIComponent(client.name)}`} key={client.name}>
-            <div className="group cursor-pointer relative mb-2 mt-5">
-              <div className="relative overflow-hidden group-hover:ring-2 group-hover:ring-indigo-600 transition-shadow  rounded-lg bg-gradient-to-b from-gray-900 to-indigo-950">
-                {/* Render Projects as a grid without gaps or rounding */}
-                {renderProjectLayout(client, client.projects)}
-
-                {/* Overlay: Default state with client name */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-start">
-                  <h2 className="text-white text-2xl font-bold py-2 px-4 bg-indigo-800 rounded-r-lg bg-opacity-70">
-                    {client.name}
-                  </h2>
-                </div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <h2 className="text-white text-xl font-semibold">View More</h2>
-                </div>
-              </div>
-            </div>
-          </Link>
+      {/* Image grid */}
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+        {filteredImages.map((image, index) => (
+          <div
+            key={index}
+            className="break-inside-avoid mb-4 cursor-pointer rounded-lg overflow-hidden"
+            onClick={() => handleThumbnailClick(index)}
+          >
+            <Image
+              src={image.src}
+              alt={`${image.client} - ${image.project}`}
+              width={300}
+              height={200}
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
         ))}
       </div>
+
+      {/* Lightbox for viewing images */}
+      {lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={filteredImages.map(image => ({
+            src: image.src,
+            title: `${image.client} - ${image.project}`,
+            description: image.description
+          }))}
+          index={lightboxIndex}
+        />
+      )}
     </div>
   );
 };

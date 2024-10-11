@@ -1,26 +1,38 @@
-import fs from 'fs';
-import path from 'path';
-import { useState } from 'react';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
-import HeaderBasic from '../../components/HeaderBasic';
-import Image from 'next/image';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Button from "../../components/Button";
 
-const ClientPage = ({ clientData }) => {
+
+const ClientShowcase = ({ clientData = [] }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  if (!clientData) {
-    return <div>Client data not found</div>;
+  const [filteredClients, setFilteredClients] = useState(clientData);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    setFilteredClients(
+      activeFilter === "All"
+        ? clientData
+        : clientData.filter((client) => client.name === activeFilter)
+    );
+  }, [activeFilter, clientData]);
+
+  // Extract unique categories dynamically from the clientData
+  useEffect(() => {
+    const allCategories = ["All", ...clientData.map((client) => client.name)];
+    setCategories(allCategories);
+  }, [clientData]);
+
+  if (!clientData || clientData.length === 0) {
+    return <div>No client data available.</div>;
   }
 
-  const { name, projects } = clientData;
-  const headerImage = `/images/clients/${encodeURIComponent(name)}/header.jpg`;
-
-  const handleThumbnailClick = (index, images) => {
+  const handleThumbnailClick = (images, index) => {
     setLightboxImages(images);
     setLightboxIndex(index);
     setLightboxOpen(true);
@@ -28,18 +40,24 @@ const ClientPage = ({ clientData }) => {
 
   const renderProjectLayout = (client, projects = []) => {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 text-white">
-        {projects.flatMap((project) =>
-          (project.images || []).map((image, imgIdx) => {
-            const imagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(image)}`;
-            const fullImagePath = `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(image)}`;
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
+        {projects.flatMap((project, idx) =>
+          (project.images || []).slice(0, 3).map((image, imgIdx) => {
+            const imagePath = `/images/clients/${encodeURIComponent(
+              client.name
+            )}/${encodeURIComponent(project.name)}/thumbnails/${encodeURIComponent(
+              image
+            )}`;
+            const fullImagePaths = (project.images || []).map((img) =>
+              `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(img)}`
+            );
 
             return (
               <div
                 key={imgIdx}
                 className="relative w-full cursor-pointer"
-                style={{ paddingBottom: '100%' }} // Square thumbnail ratio
-                onClick={() => handleThumbnailClick(imgIdx, (project.images || []).map((img) => `/images/clients/${encodeURIComponent(client.name)}/${encodeURIComponent(project.name)}/${encodeURIComponent(img)}`))}
+                style={{ paddingBottom: "100%" }}
+                onClick={() => handleThumbnailClick(fullImagePaths, imgIdx)}
               >
                 <Image
                   src={imagePath}
@@ -57,39 +75,45 @@ const ClientPage = ({ clientData }) => {
     );
   };
 
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
+
   return (
-    <div>
-      <Nav />
-
-      <HeaderBasic
-        title={name}
-        subtitle={`Explore ${name}'s Projects`}
-        backgroundImage={headerImage}
-      />
-
-      <div className="container mx-auto px-6 py-10">
-        {projects.length > 0 ? (
-          <div className="space-y-10">
-            {projects.map((project) => (
-              <div key={project.name}>
-                <h3 className="text-xl font-semibold mb-4 text-white">{project.name}</h3>
-                {renderProjectLayout(clientData, [project])}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-white">No projects available for this client.</p>
-        )}
+    <div className="client-showcase container mx-auto px-6 py-10">
+      {/* Filter buttons */}
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        {categories.map((filter) => (
+          <Button key={filter} onClick={() => handleFilterClick(filter)}>
+            {filter}
+          </Button>
+        ))}
       </div>
 
-      <Footer />
+      <div className="space-y-10">
+        {filteredClients.map((client) => (
+          <div key={client.name} className="group cursor-pointer relative mb-2 mt-5">
+            <div className="relative overflow-hidden group-hover:ring-2 group-hover:ring-indigo-600 transition-shadow rounded-lg bg-gradient-to-b from-gray-900 to-indigo-950">
+              {/* Render Projects as a grid without gaps or rounding */}
+              {renderProjectLayout(client, client.projects)}
 
-      {/* Lightbox Component */}
+              {/* Overlay: Default state with client name */}
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-start ">
+                <h2 className="text-white text-2xl font-bold py-2 px-4 bg-indigo-800 rounded-r-lg bg-opacity-70">
+                  {client.name}
+                </h2>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
-          slides={lightboxImages.map((imgSrc) => ({ src: imgSrc }))}
+          slides={lightboxImages.map((src) => ({ src }))}
           index={lightboxIndex}
           onIndexChange={setLightboxIndex}
         />
@@ -98,36 +122,4 @@ const ClientPage = ({ clientData }) => {
   );
 };
 
-// Generate static paths for all clients
-export async function getStaticPaths() {
-  const clientsDirectory = path.join(process.cwd(), 'public/images/clients');
-  const clientNames = fs.readdirSync(clientsDirectory);
-
-  const paths = clientNames.map((clientName) => ({
-    params: { client: clientName },
-  }));
-
-  return { paths, fallback: false };
-}
-
-// Fetch client data for each page
-export async function getStaticProps({ params }) {
-  const { client } = params;
-  const clientDir = path.join(process.cwd(), 'public/images/clients', client);
-  
-  const projects = fs.readdirSync(clientDir).map((projectName) => {
-    const projectDir = path.join(clientDir, projectName);
-    const images = fs.existsSync(path.join(projectDir, 'thumbnails'))
-      ? fs.readdirSync(path.join(projectDir, 'thumbnails')).filter((img) => /\.(jpg|jpeg|png|webp)$/.test(img)) // Support PNG, JPG, WebP
-      : [];
-    return { name: projectName, images };
-  });
-
-  return {
-    props: {
-      clientData: { name: client, projects },
-    },
-  };
-}
-
-export default ClientPage;
+export default ClientShowcase;
