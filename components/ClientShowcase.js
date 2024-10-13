@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { useState, useEffect, useMemo, useCallback } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
 
 // Component to showcase client projects with images
@@ -18,6 +16,7 @@ const ClientShowcase = ({ clientData = [] }) => {
       try {
         const response = await fetch('/api/all-project-images');
         const data = await response.json();
+        console.log("API response:", data);
         setAllImages(data.images);
       } catch (error) {
         console.error("Error fetching images:", error);
@@ -49,6 +48,23 @@ const ClientShowcase = ({ clientData = [] }) => {
     setActiveFilter(filter);
   }, []);
 
+  // Custom layout for lightbox
+  const handleCloseLightbox = useCallback(() => {
+    setLightboxOpen(false);
+  }, []);
+
+  const handlePrevImage = useCallback(() => {
+    setLightboxIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : filteredImages.length - 1
+    );
+  }, [filteredImages]);
+
+  const handleNextImage = useCallback(() => {
+    setLightboxIndex((prevIndex) =>
+      prevIndex < filteredImages.length - 1 ? prevIndex + 1 : 0
+    );
+  }, [filteredImages]);
+
   // Display a message if no client data is available
   if (!Array.isArray(clientData) || clientData.length === 0) {
     return <div>No client data available.</div>;
@@ -62,7 +78,7 @@ const ClientShowcase = ({ clientData = [] }) => {
           <Button
             key={category}
             onClick={() => handleFilterClick(category)}
-            className={`${activeFilter === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`${activeFilter === category ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-700'}`}
           >
             {category}
           </Button>
@@ -90,17 +106,63 @@ const ClientShowcase = ({ clientData = [] }) => {
       </div>
 
       {/* Lightbox for viewing images */}
-      {lightboxOpen && (
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          slides={filteredImages.map(image => ({
-            src: image.src,
-            title: `${image.client} - ${image.project}`,
-            description: image.description
-          }))}
-          index={lightboxIndex}
-        />
+      {lightboxOpen && filteredImages[lightboxIndex] && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-24">
+          <div className="bg-gray-950 bg-opacity-90 rounded-lg overflow-hidden w-full h-full flex flex-col">
+            <div className="relative flex-grow ">
+              <Image
+                src={filteredImages[lightboxIndex].src}
+                alt={filteredImages[lightboxIndex].client}
+                layout="fill"
+                objectFit="contain"
+              />
+              <button
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-950 rounded-full p-2"
+                onClick={handlePrevImage}
+              >
+                &#8592; {/* Left arrow */}
+              </button>
+              <button
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-950 rounded-full p-2"
+                onClick={handleNextImage}
+              >
+                &#8594; {/* Right arrow */}
+              </button>
+            </div>
+            <div className="p-4  text-white">
+              <h2 className="text-2xl font-bold mb-2">{`${filteredImages[lightboxIndex].client} - ${filteredImages[lightboxIndex].project}`}</h2>
+
+              {/* Metadata display */}
+              {filteredImages[lightboxIndex].metadata && (
+                <div className="mb-4">
+                  {filteredImages[lightboxIndex].metadata.XPTitle && (
+                    <p className="mb-1"><strong>Title:</strong> {filteredImages[lightboxIndex].metadata.XPTitle}</p>
+                  )}
+                  {filteredImages[lightboxIndex].metadata.XPSubject && (
+                    <p className="mb-1"><strong>Subject:</strong> {filteredImages[lightboxIndex].metadata.XPSubject}</p>
+                  )}
+                  {filteredImages[lightboxIndex].metadata.ImageDescription && (
+                    <p className="mb-1"><strong>Description:</strong> {filteredImages[lightboxIndex].metadata.ImageDescription}</p>
+                  )}
+                  {filteredImages[lightboxIndex].metadata.XPComment && (
+                    <p className="mb-1"><strong>Comment:</strong> {filteredImages[lightboxIndex].metadata.XPComment}</p>
+                  )}
+                </div>
+              )}
+
+              {!filteredImages[lightboxIndex].metadata && (
+                <p className="text-red-500 mb-4">No metadata available for this image.</p>
+              )}
+
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onClick={handleCloseLightbox}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

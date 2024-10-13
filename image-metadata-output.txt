@@ -1,0 +1,2039 @@
+
+File: Characters\Creatures\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 737829,
+  "width": 1920,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Creatures\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 265799,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Creatures\thumbnails\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 10460,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Creatures\thumbnails\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 16202,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 1227806,
+  "width": 5640,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 81946,
+  "width": 1118,
+  "height": 1426,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 74883,
+  "width": 954,
+  "height": 1426,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\3.jpg
+Metadata: {
+  "fileName": "3.jpg",
+  "size": 120000,
+  "width": 1148,
+  "height": 1426,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\thumbnails\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 7135,
+  "width": 300,
+  "height": 383,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\thumbnails\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 8330,
+  "width": 300,
+  "height": 448,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\In-Game Characters\thumbnails\3.jpg
+Metadata: {
+  "fileName": "3.jpg",
+  "size": 9431,
+  "width": 300,
+  "height": 373,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_03.jpg
+Metadata: {
+  "fileName": "Characters_03.jpg",
+  "size": 137799,
+  "width": 1920,
+  "height": 1440,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_04.jpg
+Metadata: {
+  "fileName": "Characters_04.jpg",
+  "size": 712610,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_08.jpg
+Metadata: {
+  "fileName": "Characters_08.jpg",
+  "size": 589535,
+  "width": 1894,
+  "height": 1480,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_09.jpg
+Metadata: {
+  "fileName": "Characters_09.jpg",
+  "size": 331528,
+  "width": 1920,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_15.jpg
+Metadata: {
+  "fileName": "Characters_15.jpg",
+  "size": 522199,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\Characters_18.jpg
+Metadata: {
+  "fileName": "Characters_18.jpg",
+  "size": 410182,
+  "width": 1034,
+  "height": 1600,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_03.jpg
+Metadata: {
+  "fileName": "Characters_03.jpg",
+  "size": 5336,
+  "width": 300,
+  "height": 225,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_04.jpg
+Metadata: {
+  "fileName": "Characters_04.jpg",
+  "size": 11402,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_08.jpg
+Metadata: {
+  "fileName": "Characters_08.jpg",
+  "size": 7394,
+  "width": 300,
+  "height": 235,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_09.jpg
+Metadata: {
+  "fileName": "Characters_09.jpg",
+  "size": 9395,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_15.jpg
+Metadata: {
+  "fileName": "Characters_15.jpg",
+  "size": 11826,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\MISC Characters\thumbnails\Characters_18.jpg
+Metadata: {
+  "fileName": "Characters_18.jpg",
+  "size": 21358,
+  "width": 300,
+  "height": 464,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Molten Man\Characters_10.jpg
+Metadata: {
+  "fileName": "Characters_10.jpg",
+  "size": 306848,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Molten Man\Characters_12.jpg
+Metadata: {
+  "fileName": "Characters_12.jpg",
+  "size": 172662,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Molten Man\thumbnails\Characters_10.jpg
+Metadata: {
+  "fileName": "Characters_10.jpg",
+  "size": 8925,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Characters\Molten Man\thumbnails\Characters_12.jpg
+Metadata: {
+  "fileName": "Characters_12.jpg",
+  "size": 4364,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 141111,
+  "width": 1500,
+  "height": 844,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": true,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 135749,
+  "width": 1500,
+  "height": 1500,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": true,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 213760,
+  "width": 1500,
+  "height": 1500,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": true,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\3.jpg
+Metadata: {
+  "fileName": "3.jpg",
+  "size": 118467,
+  "width": 1500,
+  "height": 1500,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": true,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\4.jpg
+Metadata: {
+  "fileName": "4.jpg",
+  "size": 323295,
+  "width": 1920,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\5.png
+Metadata: {
+  "fileName": "5.png",
+  "size": 173886,
+  "width": 327,
+  "height": 799,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 72,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Dr Scholls\Insole Packaging Renders\thumbnails\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 5276,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\thumbnails\2.jpg
+Metadata: {
+  "fileName": "2.jpg",
+  "size": 7493,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\thumbnails\3.jpg
+Metadata: {
+  "fileName": "3.jpg",
+  "size": 5519,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\thumbnails\4.jpg
+Metadata: {
+  "fileName": "4.jpg",
+  "size": 10207,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Dr Scholls\Insole Packaging Renders\thumbnails\5.png
+Metadata: {
+  "fileName": "5.png",
+  "size": 240778,
+  "width": 300,
+  "height": 733,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 72,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Environment\Environments\ryan-cossette-jungle-waterfall-multi-4k0001.jpg
+Metadata: {
+  "fileName": "ryan-cossette-jungle-waterfall-multi-4k0001.jpg",
+  "size": 1474662,
+  "width": 1920,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Environments\thumbnails\ryan-cossette-jungle-waterfall-multi-4k0001.jpg
+Metadata: {
+  "fileName": "ryan-cossette-jungle-waterfall-multi-4k0001.jpg",
+  "size": 30651,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Experiments\ryan-cossette-bedroom.jpg
+Metadata: {
+  "fileName": "ryan-cossette-bedroom.jpg",
+  "size": 458805,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Experiments\thumbnails\ryan-cossette-bedroom.jpg
+Metadata: {
+  "fileName": "ryan-cossette-bedroom.jpg",
+  "size": 11834,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Futurusitic\ryan-cossette-power-up.jpg
+Metadata: {
+  "fileName": "ryan-cossette-power-up.jpg",
+  "size": 522199,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Futurusitic\ryan-cossette-retrobot-scene.jpg
+Metadata: {
+  "fileName": "ryan-cossette-retrobot-scene.jpg",
+  "size": 253878,
+  "width": 1050,
+  "height": 590,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Futurusitic\thumbnails\ryan-cossette-power-up.jpg
+Metadata: {
+  "fileName": "ryan-cossette-power-up.jpg",
+  "size": 11826,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\Futurusitic\thumbnails\ryan-cossette-retrobot-scene.jpg
+Metadata: {
+  "fileName": "ryan-cossette-retrobot-scene.jpg",
+  "size": 14280,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Environment\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 1474662,
+  "width": 1920,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Akita Dog\3d Printing_01.jpg
+Metadata: {
+  "fileName": "3d Printing_01.jpg",
+  "size": 255801,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Akita Dog\thumbnails\3d Printing_01.jpg
+Metadata: {
+  "fileName": "3d Printing_01.jpg",
+  "size": 4475,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Angel Hands\3d Printing_02.jpg
+Metadata: {
+  "fileName": "3d Printing_02.jpg",
+  "size": 249838,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Angel Hands\thumbnails\3d Printing_02.jpg
+Metadata: {
+  "fileName": "3d Printing_02.jpg",
+  "size": 3504,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 257078,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Lemmy Kilmister\3d Printing_04.jpg
+Metadata: {
+  "fileName": "3d Printing_04.jpg",
+  "size": 257078,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Lemmy Kilmister\thumbnails\3d Printing_04.jpg
+Metadata: {
+  "fileName": "3d Printing_04.jpg",
+  "size": 5257,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Ohiho State\3d Printing_05.jpg
+Metadata: {
+  "fileName": "3d Printing_05.jpg",
+  "size": 266459,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Ohiho State\thumbnails\3d Printing_05.jpg
+Metadata: {
+  "fileName": "3d Printing_05.jpg",
+  "size": 4958,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Princess Castle\3d Printing_03.jpg
+Metadata: {
+  "fileName": "3d Printing_03.jpg",
+  "size": 265190,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": true,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Princess Castle\thumbnails\3d Printing_03.jpg
+Metadata: {
+  "fileName": "3d Printing_03.jpg",
+  "size": 4213,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Scott Wayland\3d Printing_006.jpg
+Metadata: {
+  "fileName": "3d Printing_006.jpg",
+  "size": 275967,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Foreverence\Scott Wayland\thumbnails\3d Printing_006.jpg
+Metadata: {
+  "fileName": "3d Printing_006.jpg",
+  "size": 5557,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 607217,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Lobby Redesign\ryan-cossette-lobby-6-0002.jpg
+Metadata: {
+  "fileName": "ryan-cossette-lobby-6-0002.jpg",
+  "size": 638799,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Lobby Redesign\ryan-cossette-lobby-7-0002.jpg
+Metadata: {
+  "fileName": "ryan-cossette-lobby-7-0002.jpg",
+  "size": 492713,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Lobby Redesign\thumbnails\ryan-cossette-lobby-6-0002.jpg
+Metadata: {
+  "fileName": "ryan-cossette-lobby-6-0002.jpg",
+  "size": 13082,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Lobby Redesign\thumbnails\ryan-cossette-lobby-7-0002.jpg
+Metadata: {
+  "fileName": "ryan-cossette-lobby-7-0002.jpg",
+  "size": 11015,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Super Bowl LII Set Design\ryan-cossette-superbowl-test.jpg
+Metadata: {
+  "fileName": "ryan-cossette-superbowl-test.jpg",
+  "size": 486669,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Super Bowl LII Set Design\ryan-cossette-warming-house-fireplace.jpg
+Metadata: {
+  "fileName": "ryan-cossette-warming-house-fireplace.jpg",
+  "size": 607217,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Super Bowl LII Set Design\thumbnails\ryan-cossette-superbowl-test.jpg
+Metadata: {
+  "fileName": "ryan-cossette-superbowl-test.jpg",
+  "size": 15418,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Kare11\Super Bowl LII Set Design\thumbnails\ryan-cossette-warming-house-fireplace.jpg
+Metadata: {
+  "fileName": "ryan-cossette-warming-house-fireplace.jpg",
+  "size": 15124,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Knit.Audio\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 1297335,
+  "width": 1600,
+  "height": 1082,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\knitaudio_01.png
+Metadata: {
+  "fileName": "knitaudio_01.png",
+  "size": 1297335,
+  "width": 1600,
+  "height": 1082,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\knitaudio_02.png
+Metadata: {
+  "fileName": "knitaudio_02.png",
+  "size": 102569,
+  "width": 1600,
+  "height": 1082,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\knitaudio_03.png
+Metadata: {
+  "fileName": "knitaudio_03.png",
+  "size": 133729,
+  "width": 1600,
+  "height": 1082,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\thumbnails\knitaudio_01.png
+Metadata: {
+  "fileName": "knitaudio_01.png",
+  "size": 70145,
+  "width": 300,
+  "height": 203,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\thumbnails\knitaudio_02.png
+Metadata: {
+  "fileName": "knitaudio_02.png",
+  "size": 23669,
+  "width": 300,
+  "height": 203,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Knit.Audio\Website\thumbnails\knitaudio_03.png
+Metadata: {
+  "fileName": "knitaudio_03.png",
+  "size": 27810,
+  "width": 300,
+  "height": 203,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 638010,
+  "width": 1715,
+  "height": 1008,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 120,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\manyscreen_01.png
+Metadata: {
+  "fileName": "manyscreen_01.png",
+  "size": 638010,
+  "width": 1715,
+  "height": 1008,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 120,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\manyscreen_02.png
+Metadata: {
+  "fileName": "manyscreen_02.png",
+  "size": 537796,
+  "width": 1399,
+  "height": 816,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\manyscreen_03.png
+Metadata: {
+  "fileName": "manyscreen_03.png",
+  "size": 195519,
+  "width": 1385,
+  "height": 852,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\manyscreen_04.png
+Metadata: {
+  "fileName": "manyscreen_04.png",
+  "size": 102062,
+  "width": 1402,
+  "height": 1027,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\thumbnails\manyscreen_01.png
+Metadata: {
+  "fileName": "manyscreen_01.png",
+  "size": 61008,
+  "width": 300,
+  "height": 176,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 120,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\thumbnails\manyscreen_02.png
+Metadata: {
+  "fileName": "manyscreen_02.png",
+  "size": 53221,
+  "width": 300,
+  "height": 175,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\thumbnails\manyscreen_03.png
+Metadata: {
+  "fileName": "manyscreen_03.png",
+  "size": 31026,
+  "width": 300,
+  "height": 185,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Manyscreen\Website\thumbnails\manyscreen_04.png
+Metadata: {
+  "fileName": "manyscreen_04.png",
+  "size": 20598,
+  "width": 300,
+  "height": 220,
+  "format": "png",
+  "space": "srgb",
+  "channels": 4,
+  "depth": "uchar",
+  "density": 96,
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": true
+}
+
+File: Marvel\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 191561,
+  "width": 2622,
+  "height": 1008,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Marvel\In-Game Ironman Model\Characters_06.jpg
+Metadata: {
+  "fileName": "Characters_06.jpg",
+  "size": 148934,
+  "width": 1920,
+  "height": 2400,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Marvel\In-Game Ironman Model\Characters_07.jpg
+Metadata: {
+  "fileName": "Characters_07.jpg",
+  "size": 175232,
+  "width": 1920,
+  "height": 2400,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Marvel\In-Game Ironman Model\thumbnails\Characters_06.jpg
+Metadata: {
+  "fileName": "Characters_06.jpg",
+  "size": 6266,
+  "width": 300,
+  "height": 375,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Marvel\In-Game Ironman Model\thumbnails\Characters_07.jpg
+Metadata: {
+  "fileName": "Characters_07.jpg",
+  "size": 7226,
+  "width": 300,
+  "height": 375,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 170320,
+  "width": 2728,
+  "height": 1046,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\Characters_01.jpg
+Metadata: {
+  "fileName": "Characters_01.jpg",
+  "size": 99118,
+  "width": 1435,
+  "height": 1448,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\Characters_02.jpg
+Metadata: {
+  "fileName": "Characters_02.jpg",
+  "size": 65571,
+  "width": 1395,
+  "height": 1394,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\Characters_16.jpg
+Metadata: {
+  "fileName": "Characters_16.jpg",
+  "size": 89554,
+  "width": 1140,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\Characters_20.jpg
+Metadata: {
+  "fileName": "Characters_20.jpg",
+  "size": 66559,
+  "width": 1920,
+  "height": 1258,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\thumbnails\Characters_01.jpg
+Metadata: {
+  "fileName": "Characters_01.jpg",
+  "size": 6025,
+  "width": 300,
+  "height": 303,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\thumbnails\Characters_02.jpg
+Metadata: {
+  "fileName": "Characters_02.jpg",
+  "size": 4876,
+  "width": 300,
+  "height": 300,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\thumbnails\Characters_16.jpg
+Metadata: {
+  "fileName": "Characters_16.jpg",
+  "size": 6273,
+  "width": 300,
+  "height": 284,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Resurgam Studios\In-Game Characters\thumbnails\Characters_20.jpg
+Metadata: {
+  "fileName": "Characters_20.jpg",
+  "size": 2657,
+  "width": 300,
+  "height": 196,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Seven - Cold Brew Coffee\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 305688,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Seven - Cold Brew Coffee\Product Renders\ryan-cossette-cans-and-beans-0001.jpg
+Metadata: {
+  "fileName": "ryan-cossette-cans-and-beans-0001.jpg",
+  "size": 305688,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Seven - Cold Brew Coffee\Product Renders\ryan-cossette-cans-white.jpg
+Metadata: {
+  "fileName": "ryan-cossette-cans-white.jpg",
+  "size": 227668,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Seven - Cold Brew Coffee\Product Renders\thumbnails\ryan-cossette-cans-and-beans-0001.jpg
+Metadata: {
+  "fileName": "ryan-cossette-cans-and-beans-0001.jpg",
+  "size": 9799,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Seven - Cold Brew Coffee\Product Renders\thumbnails\ryan-cossette-cans-white.jpg
+Metadata: {
+  "fileName": "ryan-cossette-cans-white.jpg",
+  "size": 7788,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Sunmaid Raisins\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 625968,
+  "width": 5138,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Sunmaid Raisins\Sunmaid Woman\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 444076,
+  "width": 3414,
+  "height": 1920,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:4:4",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Sunmaid Raisins\Sunmaid Woman\thumbnails\1.jpg
+Metadata: {
+  "fileName": "1.jpg",
+  "size": 3672,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 587112,
+  "width": 1920,
+  "height": 1459,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\ryan-cossette-dessert-scene.jpg
+Metadata: {
+  "fileName": "ryan-cossette-dessert-scene.jpg",
+  "size": 196434,
+  "width": 1280,
+  "height": 720,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\ryan-cossette-dinner-room-fireplace-hr-2.jpg
+Metadata: {
+  "fileName": "ryan-cossette-dinner-room-fireplace-hr-2.jpg",
+  "size": 587112,
+  "width": 1920,
+  "height": 1459,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\ryan-cossette-nic-room-buffet.jpg
+Metadata: {
+  "fileName": "ryan-cossette-nic-room-buffet.jpg",
+  "size": 233547,
+  "width": 1280,
+  "height": 720,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\ryan-cossette-nic-room-full.jpg
+Metadata: {
+  "fileName": "ryan-cossette-nic-room-full.jpg",
+  "size": 227992,
+  "width": 1280,
+  "height": 720,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\ryan-cossette-table-top-scene-dinner-white-deer.jpg
+Metadata: {
+  "fileName": "ryan-cossette-table-top-scene-dinner-white-deer.jpg",
+  "size": 235160,
+  "width": 1280,
+  "height": 720,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\thumbnails\ryan-cossette-dessert-scene.jpg
+Metadata: {
+  "fileName": "ryan-cossette-dessert-scene.jpg",
+  "size": 10282,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\thumbnails\ryan-cossette-dinner-room-fireplace-hr-2.jpg
+Metadata: {
+  "fileName": "ryan-cossette-dinner-room-fireplace-hr-2.jpg",
+  "size": 12548,
+  "width": 300,
+  "height": 228,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\thumbnails\ryan-cossette-nic-room-buffet.jpg
+Metadata: {
+  "fileName": "ryan-cossette-nic-room-buffet.jpg",
+  "size": 13157,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\thumbnails\ryan-cossette-nic-room-full.jpg
+Metadata: {
+  "fileName": "ryan-cossette-nic-room-full.jpg",
+  "size": 12282,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Target\Holiday Event Space\thumbnails\ryan-cossette-table-top-scene-dinner-white-deer.jpg
+Metadata: {
+  "fileName": "ryan-cossette-table-top-scene-dinner-white-deer.jpg",
+  "size": 13293,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Winnebego\Adventurer Renders\ryan-cossette-rv-side-view.jpg
+Metadata: {
+  "fileName": "ryan-cossette-rv-side-view.jpg",
+  "size": 124714,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Winnebego\Adventurer Renders\thumbnails\ryan-cossette-rv-side-view.jpg
+Metadata: {
+  "fileName": "ryan-cossette-rv-side-view.jpg",
+  "size": 3952,
+  "width": 300,
+  "height": 169,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
+
+File: Winnebego\header.jpg
+Metadata: {
+  "fileName": "header.jpg",
+  "size": 124714,
+  "width": 1920,
+  "height": 1080,
+  "format": "jpeg",
+  "space": "srgb",
+  "channels": 3,
+  "depth": "uchar",
+  "density": 72,
+  "chromaSubsampling": "4:2:0",
+  "isProgressive": false,
+  "hasProfile": false,
+  "hasAlpha": false
+}
