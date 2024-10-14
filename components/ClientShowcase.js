@@ -107,8 +107,8 @@ const ClientShowcase = ({ clientData = [] }) => {
 
       {/* Lightbox for viewing images */}
       {lightboxOpen && filteredImages[lightboxIndex] && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 p-24">
-          <div className="bg-gray-950 bg-opacity-90 rounded-lg overflow-hidden w-full h-full flex flex-col">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-20 bg-black bg-opacity-90">
+          <div className="bg-gray-950 bg-opacity-90 border-2 border-indigo-700 rounded-lg overflow-hidden w-full h-full flex flex-col">
             <div className="relative flex-grow ">
               <Image
                 src={filteredImages[lightboxIndex].src}
@@ -117,16 +117,20 @@ const ClientShowcase = ({ clientData = [] }) => {
                 objectFit="contain"
               />
               <button
-                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-950 rounded-full p-2"
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-indigo-700 rounded-full p-2"
                 onClick={handlePrevImage}
               >
-                &#8592; {/* Left arrow */}
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
               <button
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-950 rounded-full p-2"
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-indigo-700 rounded-full p-2"
                 onClick={handleNextImage}
               >
-                &#8594; {/* Right arrow */}
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </div>
             <div className="p-4  text-white">
